@@ -7,7 +7,10 @@ services:
       - ./backend:/app
     environment:
       - PYTHONUNBUFFERED=1
-    network_mode: "host"
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
 
   frontend:
     build:
@@ -19,4 +22,5 @@ services:
       - /app/node_modules
     depends_on:
       - backend
-    network_mode: "host"
+    ports:
+      - "5173:80"

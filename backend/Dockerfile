@@ -2,11 +2,10 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-RUN pip install uv
-
-COPY pyproject.toml uv.lock ./
-RUN uv sync --no-cache
+# Install dependencies directly with pip
+COPY pyproject.toml ./
+RUN pip install -e .
 
 COPY . .
 
-CMD ["uv", "run", "uvicorn", "back-end.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "back-end.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
