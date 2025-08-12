@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      # 코드 수정 실시간으로 컨테이너에 반영.
+      - ./backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    network_mode: "host"
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      # 로컬 frontend 폴더와 컨테이너의 /app 폴더 연결.
+      # 단, node_modules는 컨테이너의 것을 유지하여 충돌을 방지.
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    network_mode: "host"

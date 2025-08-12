@@ -1,0 +1,43 @@
+{
+  "name": "vton-client-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.77.2",
+    "@tanstack/react-query-devtools": "^5.74.4",
+    "@vitejs/plugin-basic-ssl": "^2.0.0",
+    "axios": "^1.9.0",
+    "lottie-react": "^2.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-error-boundary": "^6.0.0",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.6.1",
+    "styled-components": "^6.1.18",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@tanstack/eslint-plugin-query": "^5.78.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@types/react-transition-group": "^4.4.12",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.2.0",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.33.0",
+    "vite": "^6.3.5"
+  }
+}
