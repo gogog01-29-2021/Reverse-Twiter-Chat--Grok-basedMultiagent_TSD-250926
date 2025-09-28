@@ -1,0 +1,6 @@
+[submodule "gpt-oss"]
+	path = gpt-oss
+	url = git@github.com:openai/gpt-oss.git
+[submodule "nanoGPT"]
+	path = nanoGPT
+	url = git@github.com:karpathy/nanoGPT.git

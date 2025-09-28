@@ -1,3 +1,3 @@
-from .agents import host_agent
+from .runtime import AgentProvider, AgentRuntime, get_agent_runtime
 
-__all__ = ["host_agent"]
+__all__ = ["AgentProvider", "AgentRuntime", "get_agent_runtime"]

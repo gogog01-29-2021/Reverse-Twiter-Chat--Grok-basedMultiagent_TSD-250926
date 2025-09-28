@@ -1,5 +1,3 @@
-from . import conversation, node, agents
+from . import agents, conversation, node
 
-root_agent = agents.host_agent
-
-__all__ = ["conversation", "node", "agents"]
+__all__ = ["agents", "conversation", "node"]
