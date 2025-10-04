@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Chat from '../chat/Chat';
 import Header from '../header/Header';
 import NodeLib from '../nodeLib/NodeLib';
+import FlowCanvas from '../flowCanvas/FlowCanvas';
 
 import * as S from './styled';
 import type { INode } from '../../apis/axios/nodeLib/types';
@@ -123,31 +124,11 @@ const Home = () => {
             <NodeLib onNodeSelect={handleNodeSelect} />
 
             <S.MainContent>
-              {/* 노드가 있을 때만 헤더 표시 */}
-              {selectedNodes.length > 0 && (
-                <S.NodesHeader>
-                  <span>선택된 노드</span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <S.NodeCount>{selectedNodes.length}개</S.NodeCount>
-                    {/* {workflowId && (
-                      <S.WorkflowIdIndicator>ID: {workflowId.slice(0, 8)}...</S.WorkflowIdIndicator>
-                    )} */}
-                    <S.ClearAllButton onClick={handleClearAll}>전체 삭제</S.ClearAllButton>
-                  </div>
-                </S.NodesHeader>
-              )}
-
-              <S.SelectedNodesContainer>
-                {selectedNodes.map((node, index) => (
-                  <S.SelectedNodeItem key={`${node.id}-${index}`}>
-                    <S.NodeContent>
-                      <S.NodeName title={node.name}>{node.name}</S.NodeName>
-                      <S.RemoveButton onClick={() => handleNodeRemove(index)}>×</S.RemoveButton>
-                    </S.NodeContent>
-                  </S.SelectedNodeItem>
-                ))}
-                {selectedNodes.length === 0 && <S.EmptyMessage>노드를 선택해주세요</S.EmptyMessage>}
-              </S.SelectedNodesContainer>
+              <FlowCanvas 
+                selectedNodes={selectedNodes}
+                onNodeRemove={handleNodeRemove}
+                onClearAll={handleClearAll}
+              />
             </S.MainContent>
 
             <S.ChatWrapper>

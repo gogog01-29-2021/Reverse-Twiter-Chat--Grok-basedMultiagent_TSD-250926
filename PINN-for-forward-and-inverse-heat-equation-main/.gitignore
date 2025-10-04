@@ -1,0 +1,4 @@
+.vscode/
+import test.py
+testing.py
+__pycache__/

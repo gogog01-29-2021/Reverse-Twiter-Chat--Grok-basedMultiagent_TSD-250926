@@ -1,0 +1,15 @@
+function to return iterable with train settings from the set initial values for settings
+
+function to return save directory name for given setting
+
+function to return models for given setting
+
+function to evaluate network for given setting
+
+function to append individual run results to csv file
+
+function to append results from meaned runs into a csv file
+
+function to write all relevant training information into a file
+
+function to perform plots with given setting
