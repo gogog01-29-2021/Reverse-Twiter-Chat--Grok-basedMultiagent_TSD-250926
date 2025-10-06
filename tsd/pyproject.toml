@@ -1,0 +1,18 @@
+[project]
+name = "tsd"
+version = "0.1.0"
+description = "FBA Quant Trading Strategy Manager"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "csp~=0.0.5",
+    "httpx~=0.27.2",
+    "orjson~=3.10.7",
+    "pandas~=2.0.3",
+    "pyarrow>=18.1.0",
+    "pyjwt~=2.8.0",
+    "pyzmq~=25.1.2",
+    "sortedcontainers~=2.4.0",
+    "websocket-client~=1.8.0",
+    "websockets~=13.1",
+]
